@@ -10,6 +10,7 @@ public class Hello {
 		System.out.println("303371809 - This line was added by Z Wiese.");
 		System.out.println("302744806 - This line was added by Brian Reyna.");
 		System.out.println("302362177 - This line was added by Zamiel Red Jose Gripo.");
+		System.out.println("303002245 - This line was added by Emiley Mynhier");
 		System.out.println("SacStateID - This line was added by First name Last name.");
 		System.out.println("SacStateID - This line was added by First name Last name.");
 		System.out.println("SacStateID - This line was added by First name Last name.");
