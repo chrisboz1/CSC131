@@ -67,6 +67,7 @@ public class Scene
 		JTextArea text = new JTextArea();
 		text.setText(description);
 		text.setLineWrap(true);
+		text.setWrapStyleWord(true);
 		text.setOpaque(false);
 		text.setBounds(frame.getWidth()/2, 0, frame.getWidth()-50, frame.getHeight());
 		text.setEditable(false);
@@ -239,7 +240,7 @@ public class Scene
 		
 		//Create scene frames and associate choices
 		scene1.createSceneFrame("hors.jpg", choices1, scenes1);
-		scene2.createSceneFrame("null", "this scene has no image, but it has words. How are you, "
+		scene2.createSceneFrame("hors.jpg", "this scene has an image, but it has words. How are you, "
 									  + "by the way? I am doing quite fine myself. I am just testing out how far I can push the text here"
 									  + "and all that jazz. oh boy howdy.", choices2, scenes2);
 		scene3.createSceneFrame("zeedee_by_thebirdgang_df81fqi-pre.jpg", "I know what you did.");
