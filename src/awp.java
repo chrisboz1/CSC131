@@ -33,7 +33,7 @@ public class awp extends Frame
                         if (Objects.equals(c.getSelectedItem(), "Zamiel's Storyline"))
                         {
                             f.dispatchEvent(new WindowEvent(f, WindowEvent.WINDOW_CLOSING));
-                            // go to Zamiel's Storyline
+                            CrystalStoryline.main(args);
                         }
                         else if (Objects.equals(c.getSelectedItem(), "Emily's Storyline"))
                         {
