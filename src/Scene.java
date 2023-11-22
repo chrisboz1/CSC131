@@ -67,6 +67,7 @@ public class Scene
 		JTextArea text = new JTextArea();
 		text.setText(description);
 		text.setLineWrap(true);
+		text.setWrapStyleWord(true);
 		text.setOpaque(false);
 		text.setBounds(frame.getWidth()/2, 0, frame.getWidth()-50, frame.getHeight());
 		text.setEditable(false);
