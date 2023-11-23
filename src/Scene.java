@@ -1,15 +1,15 @@
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.ComponentAdapter;
+import java.awt.event.ComponentEvent;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
-import java.awt.event.WindowEvent;
-import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.net.URL;
 import java.util.Objects;
+import java.util.TimerTask;
 import java.util.concurrent.TimeUnit;
-
-import javax.imageio.ImageIO;
 import javax.swing.*;
 
 public class Scene 
@@ -101,6 +101,32 @@ public class Scene
 		
 		frame.add(choiceList);
 		frame.setBounds(0, 0, frame.getWidth(), frame.getHeight()+100);
+	}
+	
+	public void addAutoAdvance(int seconds, int scene) 
+	{
+		ActionListener waitAdvance = new ActionListener() 
+		{
+			public void actionPerformed(ActionEvent evt) 
+			{
+				advanceScene(scene);
+			}
+		};
+		
+		Timer timer = new Timer(seconds*1000, waitAdvance);
+		timer.setRepeats(false);
+		frame.addComponentListener(new ComponentAdapter() 
+		{
+			public void componentShown(ComponentEvent e) 
+			{
+				timer.start();
+			}
+		   
+			public void componentHidden(ComponentEvent e) 
+			{
+				timer.stop();
+			}
+		});
 	}
 	
 	//createSceneFrame functions are optional functions to make it easier to create a whole frame
@@ -196,7 +222,8 @@ public class Scene
 	
 	public static void main(String[] args) throws IOException, InterruptedException 
 	{
-		test2();
+		//test2();
+		autoAdvanceTest();
 	}
 	
 	private static void test1() throws InterruptedException 
@@ -247,6 +274,38 @@ public class Scene
 		
 		scene4.createSceneFrame("empty", "what am i?");
 		scene5.createSceneFrame("image.png", "WHAT AM I FIGHTING FOOOOOORRRR");
+		
+		scene1.getFrame().setVisible(true);
+	}
+	
+	private static void autoAdvanceTest() throws InterruptedException 
+	{
+		//Declare Scenes
+		Scene scene1 = new Scene();
+		Scene scene2 = new Scene();
+		Scene scene3 = new Scene();
+		Scene auto = new Scene();
+		
+		Scene manual = new Scene();
+		Scene hidden = new Scene();
+		//Declare choices and next scenes
+		String choices1[] = {"This choice shouldnt do anything", "the second coming", "Halo 3", "Let's test the auto"};
+		Scene scenes1[] = {scene2, scene3, auto};
+		
+		String autoDesc = "This scene has two choices, but one of them is \"hidden\" and will be advanced to after some time";
+		String autoChoices[] = {"Header text lol", "select manually"};
+		Scene autoScenes[] = {manual, hidden};
+		auto.addAutoAdvance(5, 1);
+		
+		//Create scene frames and associate choices
+		scene1.createSceneFrame("hors.jpg", "do the last option to test auto advance", choices1, scenes1);
+		scene2.createSceneFrame("hors.jpg", "this scene has an image, but it has words. How are you, "
+									  + "by the way? I am doing quite fine myself. I am just testing out how far I can push the text here"
+									  + "and all that jazz. oh boy howdy.");
+		scene3.createSceneFrame("zeedee_by_thebirdgang_df81fqi-pre.jpg", "I know what you did.");
+		auto.createSceneFrame("AAAA", autoDesc, autoChoices, autoScenes);
+		manual.createSceneFrame("wha", "manual selection");
+		hidden.createSceneFrame("wha", "hidden auto-advance selection");
 		
 		scene1.getFrame().setVisible(true);
 	}
