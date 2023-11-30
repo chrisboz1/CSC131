@@ -39,6 +39,7 @@ public class awp extends Frame
                         {
                             f.dispatchEvent(new WindowEvent(f, WindowEvent.WINDOW_CLOSING));
                             // go to Emily's Storyline
+                            EmilyStoryLine.main(args);
                         }
                         else if (Objects.equals(c.getSelectedItem(), "Arju's Storyline"))
                         {
