@@ -17,13 +17,13 @@ public class EmilyStoryLine {
 
         blackCatButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                chooseCat("Black");
+                chooseCat("Black", frame);
             }
         });
 
         orangeCatButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                chooseCat("Orange");
+                chooseCat("Orange", frame);
             }
         });
 
@@ -34,7 +34,9 @@ public class EmilyStoryLine {
         frame.setVisible(true);
     }
 
-    private static void chooseCat(String color) {
+    private static void chooseCat(String color, JFrame previousFrame) {
+        previousFrame.dispose(); // Close the previous window
+
         JFrame nameFrame = new JFrame("Name Your " + color + " Cat");
         JLabel nameLabel = new JLabel("What will you name your " + color.toLowerCase() + " cat?");
         nameLabel.setBounds(50, 50, 300, 50);
@@ -59,4 +61,3 @@ public class EmilyStoryLine {
         nameFrame.setVisible(true);
     }
 }
-
