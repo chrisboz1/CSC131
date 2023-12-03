@@ -1,15 +1,13 @@
 import java.awt.*;
 import java.awt.event.*;
-import java.beans.PropertyChangeListener;
-import java.util.Objects;
 import javax.swing.*;
 
-public class BrianStoryline extends Frame
+public class theIsland extends Frame // Brian Reyna
 {
     public static void main(String[] args)
     {
         JFrame f;
-        f = new JFrame("Brian's Storyline");
+        f = new JFrame("The Island Storyline");
 
         JLabel lb = new JLabel("<html>You are stranded on an abandoned island.<br>You notice an old row boat on the shore, a wrecked helicopter, and what seems to be a tent in the distance.<br>Which will you chose to visit?</html>");
         lb.setBounds(350, 200, 300, 300);
@@ -52,6 +50,8 @@ public class BrianStoryline extends Frame
                         rowedOut.setSize(1000, 1000);
                         rowedOut.setLayout(null);
                         rowedOut.setVisible(true);
+
+                        rowedOut.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                     }
                 });
 
@@ -70,6 +70,7 @@ public class BrianStoryline extends Frame
                         hiddenTreasure1.setLayout(null);
                         hiddenTreasure1.setVisible(true);
 
+                        hiddenTreasure1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                     }
                 });
 
@@ -97,6 +98,44 @@ public class BrianStoryline extends Frame
                 campsite.setBounds(150, 550, 300, 50);
                 lab.setBounds(525, 550, 300, 50);
 
+                campsite.addActionListener(new ActionListener()
+                {
+                    public void actionPerformed(ActionEvent e)
+                    {
+                        wreckedHelicopter.setVisible(false);
+                        JFrame campsites = new JFrame("Campsite Scene");
+
+                        JLabel cslb = new JLabel("<html>You go to the campsite on the far side of the island.<br>You find that there are others stranded on the island.<br>However they are native to the island and very hostile.<br>They quickly attack and kill you!</html>");
+                        cslb.setBounds(350, 200, 300, 300);
+                        campsites.add(cslb);
+
+                        campsites.setSize(1000, 1000);
+                        campsites.setLayout(null);
+                        campsites.setVisible(true);
+
+                        campsites.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                    }
+                });
+
+                lab.addActionListener(new ActionListener()
+                {
+                    public void actionPerformed(ActionEvent e)
+                    {
+                        wreckedHelicopter.setVisible(false);
+                        JFrame labs = new JFrame("Lab Scene");
+
+                        JLabel sllb = new JLabel("<html>You follow the map and it leads to a secret lab beneath the island.<br>You find creatures hidden in the lab and they attack you!<br>You are now one of them!</html>");
+                        sllb.setBounds(350, 200, 300, 300);
+                        labs.add(sllb);
+
+                        labs.setSize(1000, 1000);
+                        labs.setLayout(null);
+                        labs.setVisible(true);
+
+                        labs.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                    }
+                });
+
                 wreckedHelicopter.add(campsite);
                 wreckedHelicopter.add(lab);
                 wreckedHelicopter.setSize(1000, 1000);
@@ -120,6 +159,44 @@ public class BrianStoryline extends Frame
                 JButton treasureMap2 = new JButton("Take the map and find the hidden treasure");
                 smokeSignal.setBounds(100, 550, 325, 50);
                 treasureMap2.setBounds(550, 550, 300, 50);
+
+                smokeSignal.addActionListener(new ActionListener()
+                {
+                    public void actionPerformed(ActionEvent e)
+                    {
+                        tent.setVisible(false);
+                        JFrame smokey = new JFrame("Smoke Signal Scene");
+
+                        JLabel sslb = new JLabel("<html>You use the smoke signals to signal a helicopter overhead.<br>The helicopter finds you!<br>You are rescued and flown off the island!</html>");
+                        sslb.setBounds(350, 200, 300, 300);
+                        smokey.add(sslb);
+
+                        smokey.setSize(1000, 1000);
+                        smokey.setLayout(null);
+                        smokey.setVisible(true);
+
+                        smokey.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                    }
+                });
+
+                treasureMap2.addActionListener(new ActionListener()
+                {
+                    public void actionPerformed(ActionEvent e)
+                    {
+                        tent.setVisible(false);
+                        JFrame hiddenTreasure2 = new JFrame("Hidden Treasure Scene");
+
+                        JLabel ft2lb = new JLabel("<html>You went out to find the hidden treasure.<br>You found the hidden treasure and were rescued by a helicopter!</html>");
+                        ft2lb.setBounds(350, 200, 300, 300);
+                        hiddenTreasure2.add(ft2lb);
+
+                        hiddenTreasure2.setSize(1000, 1000);
+                        hiddenTreasure2.setLayout(null);
+                        hiddenTreasure2.setVisible(true);
+
+                        hiddenTreasure2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                    }
+                });
 
                 tent.add(smokeSignal);
                 tent.add(treasureMap2);
