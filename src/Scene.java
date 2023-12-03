@@ -53,10 +53,11 @@ public class Scene
 		File file = new File(".\\src\\resources\\" + imageName);
 		if (!file.exists()) 
 		{
-			System.out.println("Invalid Image File.");
+			System.out.println("Invalid Image File. (" + file.toString() + ")");
 			return null;
 		}
 		
+		System.out.println("Valid Image File. (" + file.toString() + ")");
 		ImageIcon icon1 = new ImageIcon(file.toString());
 		frame.add(new JLabel(icon1));
 		return icon1;

@@ -39,7 +39,7 @@ public class CrystalStoryline
 		Scene flee = new Scene();
 		Scene confront = new Scene();
 		
-		//Orb Route Start Choices 
+		//Orb Route Choices 
 		String orbDesc = "It looks to be one of those magical crystal balls, which are commonly used to store information and"
 					   + " communicate.";
 		String orbChoices[] = { "Maybe it has the princess's message.", "Activate the orb." };
@@ -69,7 +69,7 @@ public class CrystalStoryline
 		
 		Scene stab = new Scene();
 		Scene sneak = new Scene();
-		//Spear Route Start Choices
+		//Spear Route Choices
 		String spearDesc = "Pulling it out of the snow, you recall why your fellow royal guards refer to the spear as \"the"
 						 + " soldier's only true friend.\" Even after crash landing, this weapon of war is in pristine condition."
 						 + " The spear tip sheens bright as you brush it clean, and the shaft remains smooth and in one piece.";
@@ -95,5 +95,56 @@ public class CrystalStoryline
 		art.createSceneFrame("crystal_storyline\\art.png", artDesc, artChoices, artScenes);
 		
 		intro1.getFrame().setVisible(true);
+		
+		/***********************************************************************************************************/
+		//Flee Sequence and Branches
+		Scene fleeHidden = new Scene();
+		Scene fleeCaught = new Scene();
+		
+		//Hidden
+		//Scene fall = new Scene();
+		
+		//Caught
+		Scene withThem = new Scene();
+		Scene fleeBetrayal = new Scene();
+		Scene fleeBad = new Scene();
+		//Flee Route Choices
+		String fleeDesc = "";
+		String fleeChoices[] = { "...", "!" };
+		Scene fleeScenes[] = {fleeHidden, fleeCaught};
+		flee.addAutoAdvance(5, 1);
+		
+		String fleeHiddenDesc = "You evade the enemy patrol, dashing aimlessly through this white desert. Fittingly, like quicksand"
+							  + ", you feel the ground give way.";
+		String fleeHiddenChoices[] = { "Uh oh.", "Brace for impact." };
+		Scene fleeHiddenScenes[] = {fleeHidden};
+		
+		String fleeCaughtDesc = "A red arcane blast trips up your feeble attempt to escape. You crash onto the freezing sands.";
+		String fleeCaughtChoices[] = { "That hurt...", "Look over your shoulder." };
+		Scene fleeCaughtScenes[] = {withThem};
+		
+		String withThemDesc = "You realize that was not a soldier who shot you. You recognize the hooded figure from your unit."
+							+ " One of their cold metal tentacles holds a portable arcane cannon, still red from firing.";
+		String withThemChoices[] = { "It cannot be...", "This is..." };
+		Scene withThemScenes[] = {fleeBetrayal};
+		
+		String fleeBetrayalDesc = "This \"artificer,\" an arcane engineer, proceeds to speak. \"Running off without saying hello? "
+								+ "How rude. And you almost made off with my data sphere as well. You must have many questions, but"
+								+ " alas, I'm afraid they must remain unanswered. Non-disclosure, surely you understand.\"";
+		String fleeBetrayalChoices[] = { "...", "Stand up and fight.", "Run and hide." };
+		Scene fleeBetrayalScenes[] = {fleeBad, fleeBad};
+
+		String fleeBadDesc = "The wound in your leg makes you a split second slower. Next thing you know, you have reached your end.";
+		//Flee Route Frames
+		flee.createSceneFrame("crystal_storyline\\flee.png", fleeDesc, fleeChoices, fleeScenes);
+		
+		//Hidden
+		fleeHidden.createSceneFrame("crystal_storyline\\fleeHidden.png", fleeHiddenDesc, fleeHiddenChoices, fleeHiddenScenes);
+		
+		//Caught
+		fleeCaught.createSceneFrame("crystal_storyline\\fleeCaught.png", fleeCaughtDesc, fleeCaughtChoices, fleeCaughtScenes);
+		withThem.createSceneFrame("crystal_storyline\\withThem.png", withThemDesc, withThemChoices, withThemScenes);
+		fleeBetrayal.createSceneFrame("crystal_storyline\\fleeBetrayal.png", fleeBetrayalDesc, fleeBetrayalChoices, fleeBetrayalScenes);
+		fleeBad.createSceneFrame("crystal_storyline\\fleeBad.png", fleeBadDesc);
 	}
 }
