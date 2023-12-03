@@ -57,7 +57,7 @@ public class Scene
 			return null;
 		}
 		
-		ImageIcon icon1 = new ImageIcon(".\\src\\resources\\" + imageName);
+		ImageIcon icon1 = new ImageIcon(file.toString());
 		frame.add(new JLabel(icon1));
 		return icon1;
 	}
