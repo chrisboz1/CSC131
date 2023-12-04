@@ -21,7 +21,7 @@ public class awp extends Frame
                 c.add("Zamiel's Storyline");
                 c.add("Emily's Storyline");
                 c.add("Arju's Storyline");
-                c.add("Brian's Storyline");
+                c.add("The Island Storyline");
                 c.add("Z's Storyline");
                 c.add("Chris's Storyline");
                 f.add(c);
@@ -39,17 +39,16 @@ public class awp extends Frame
                         {
                             f.dispatchEvent(new WindowEvent(f, WindowEvent.WINDOW_CLOSING));
                             // go to Emily's Storyline
-                            EmilyStoryLine.main(args);
                         }
                         else if (Objects.equals(c.getSelectedItem(), "Arju's Storyline"))
                         {
                             f.dispatchEvent(new WindowEvent(f, WindowEvent.WINDOW_CLOSING));
                             // go to Arju's Storyline
                         }
-                        else if (Objects.equals(c.getSelectedItem(), "Brian's Storyline"))
+                        else if (Objects.equals(c.getSelectedItem(), "The Island Storyline"))
                         {
                             f.dispatchEvent(new WindowEvent(f, WindowEvent.WINDOW_CLOSING));
-                            BrianStoryline.main(args);
+                            theIsland.main(args);
                         }
                         else if (Objects.equals(c.getSelectedItem(), "Z's Storyline"))
                         {
