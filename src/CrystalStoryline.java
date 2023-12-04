@@ -94,8 +94,6 @@ public class CrystalStoryline
 		stalking.createSceneFrame("crystal_storyline\\stalking.png", stalkingDesc, stalkingChoices, stalkingScenes);
 		art.createSceneFrame("crystal_storyline\\art.png", artDesc, artChoices, artScenes);
 		
-		intro1.getFrame().setVisible(true);
-		
 		/***********************************************************************************************************/
 		//Flee Sequence and Branches
 		Scene fleeHidden = new Scene();
@@ -146,5 +144,10 @@ public class CrystalStoryline
 		withThem.createSceneFrame("crystal_storyline\\withThem.png", withThemDesc, withThemChoices, withThemScenes);
 		fleeBetrayal.createSceneFrame("crystal_storyline\\fleeBetrayal.png", fleeBetrayalDesc, fleeBetrayalChoices, fleeBetrayalScenes);
 		fleeBad.createSceneFrame("crystal_storyline\\fleeBad.png", fleeBadDesc);
+		
+		/***********************************************************************************************************/
+		
+		//Start game at introduction
+		intro1.getFrame().setVisible(true);
 	}
 }

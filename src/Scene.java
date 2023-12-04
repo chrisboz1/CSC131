@@ -50,7 +50,7 @@ public class Scene
 	
 	public ImageIcon addImage(String imageName) 
 	{
-		File file = new File(".\\src\\resources\\" + imageName);
+		File file = new File(System.getProperty("user.dir") + "\\src\\resources\\" + imageName);
 		if (!file.exists()) 
 		{
 			System.out.println("Invalid Image File. (" + file.toString() + ")");
