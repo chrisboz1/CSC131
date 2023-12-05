@@ -11,6 +11,13 @@ import java.util.Objects;
 import java.util.TimerTask;
 import java.util.concurrent.TimeUnit;
 import javax.swing.*;
+import java.nio.*;
+import java.nio.file.FileVisitResult;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.SimpleFileVisitor;
+import java.nio.file.attribute.BasicFileAttributes;
 
 public class Scene 
 {
@@ -21,6 +28,7 @@ public class Scene
 	{
 		this.frame = new JFrame();
 		frame.setBackground(new Color(0, 0, 0));
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.nextScenes = null;
 	}
 	
@@ -48,19 +56,26 @@ public class Scene
 	
 	//Functions that simplify adding JSwing components
 	
-	public ImageIcon addImage(String imageName) 
+	public ImageIcon addImage(String imageName) //throws IOException 
 	{
-		File file = new File(System.getProperty("user.dir") + "\\src\\resources\\" + imageName);
-		if (!file.exists()) 
-		{
-			System.out.println("Invalid Image File. (" + file.toString() + ")");
-			return null;
-		}
+		String imagePath = "resources/" + imageName;
+
+		try {
+		    java.net.URL imgURL = getClass().getClassLoader().getResource(imagePath);
 		
-		System.out.println("Valid Image File. (" + file.toString() + ")");
-		ImageIcon icon1 = new ImageIcon(file.toString());
-		frame.add(new JLabel(icon1));
-		return icon1;
+		    if (imgURL != null) {
+		    	System.out.println("Valid Image File. (" + imagePath + ")");
+		        ImageIcon icon1 = new ImageIcon(imgURL);
+		        frame.add(new JLabel(icon1));
+		        return icon1;
+		    } else {
+		        System.out.println("Invalid Image File. (" + imagePath + ")");
+		        return null;
+		    }
+		} catch (Exception e) {
+		    e.printStackTrace();
+		    return null;
+		}
 	}
 	
 	public void addDescription(String description) 
