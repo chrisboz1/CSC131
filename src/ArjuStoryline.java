@@ -15,6 +15,8 @@ public class ArjuStoryline extends JFrame {
 
         startAdventure();
     }
+    
+
 
     private void startAdventure() {
 
@@ -63,7 +65,6 @@ public class ArjuStoryline extends JFrame {
         setVisible(true);
     }
     
-
 
 
     private void ironManMission() {
@@ -137,11 +138,11 @@ public class ArjuStoryline extends JFrame {
                         
 
                         JLabel missionLabel = new JLabel("Suggest to form the Avengers.");
-                        missionLabel.setBounds(20, 50, 380, 20);
+                        missionLabel.setBounds(10, 50, 380, 20);
                         panel.add(missionLabel);
 
                         JButton assembleAvengersBtn = new JButton("Assemble Avengers");
-                        assembleAvengersBtn.setBounds(10, 70, 250, 30);
+                        assembleAvengersBtn.setBounds(10, 90, 250, 30);
                         panel.add(assembleAvengersBtn);
 
                         assembleAvengersBtn.addActionListener(new ActionListener() {
@@ -304,11 +305,7 @@ public class ArjuStoryline extends JFrame {
         setVisible(true);
     }
     
-    
-    
-    
-    
-    
+
     
     private void thorMission() {
     	 getContentPane().removeAll();  
@@ -400,6 +397,7 @@ public class ArjuStoryline extends JFrame {
          setVisible(true);
     	
     }
+  
     
     
     private void captainAmericaMission() {
@@ -501,6 +499,34 @@ public class ArjuStoryline extends JFrame {
     }
     
     
+    
+    
+    
+    
+    
+    private void endgame() {
+    	getContentPane().removeAll();
+
+        JPanel panel = new JPanel();
+        getContentPane().add(panel);
+        panel.setLayout(null);
+
+        JLabel label = new JLabel("YOU HAVE DEFEATED THANOS AND BROUGHT BACK HUMANITY!");
+        label.setBounds(10, 10, 600, 20);
+        panel.add(label);
+        
+        JLabel label1 = new JLabel("YOU ARE THE NEW SUPERHERO OF EARTH!!");
+        label1.setBounds(10, 30, 600, 20);
+        panel.add(label1);
+        
+        JLabel label2 = new JLabel("CONGRATULATIONS !! YOU HAVE SUCCESSFULLY COMPLETED THE MISSION");
+        label2.setBounds(10, 60, 600, 20);
+        panel.add(label2);
+        
+        setVisible(true);
+    }
+    
+    
     private void assembleAvengers() {
     	getContentPane().removeAll();
 
@@ -509,14 +535,220 @@ public class ArjuStoryline extends JFrame {
         panel.setLayout(null);
 
         JLabel label = new JLabel("Avengers have been assembled!");
-        label.setBounds(10, 10, 380, 20);
+        label.setBounds(10, 10, 600, 20);
         panel.add(label);
+        
+        JLabel label1 = new JLabel("There is a new threat incoming - THANOS ! To defeat Thanos, what is your next priority step?");
+        label1.setBounds(10, 40, 600, 20);
+        panel.add(label1);
+        
+        JButton gatherOthers = new JButton("Gather Other Avengers");
+        gatherOthers.setBounds(10, 90, 250, 30);
+        panel.add(gatherOthers);
+
+        JButton gatherStones = new JButton("Hunt Infinity Stones");
+        gatherStones.setBounds(300, 90, 200, 30);
+        panel.add(gatherStones);
+        
+        
+        gatherOthers.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                getContentPane().removeAll(); 
+
+                JPanel panel = new JPanel();
+                getContentPane().add(panel);
+                panel.setLayout(null);
+
+                JLabel label = new JLabel("You have successfully gathered SpiderMan, Black Panter, Hulk and Ms Marvel!!");
+                label.setBounds(10, 10, 600, 20);
+                panel.add(label);
+
+                JLabel missionLabel = new JLabel("Meanwhile Thanos has sacrificed Gamora to gather all Infinity Stones!!");
+                missionLabel.setBounds(10, 40, 600, 20);
+                panel.add(missionLabel);
+                
+                JLabel missionLabel1 = new JLabel("Thanos is about to SNAP !!  ");
+                missionLabel1.setBounds(10, 60, 600, 20);
+                panel.add(missionLabel1);
+                
+                JLabel missionLabel12 = new JLabel("Sacrifice yourself instead of IronMan or get Dr. Strange for Help.");
+                missionLabel12.setBounds(10, 90, 600, 20);
+                panel.add(missionLabel12);
+
+                JButton stopsnapBtn = new JButton("Sacrifice");
+                stopsnapBtn.setBounds(10, 120, 220, 30);
+                panel.add(stopsnapBtn);
+                
+                JButton callstrangeBtn = new JButton("Call Dr. Strange!");
+                callstrangeBtn.setBounds(400, 120, 180, 30);
+                panel.add(callstrangeBtn);
+
+                stopsnapBtn.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                    	endgame();
+                    }
+                });
+                
+                callstrangeBtn.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                    	getContentPane().removeAll(); 
+
+                        JPanel panel = new JPanel();
+                        getContentPane().add(panel);
+                        panel.setLayout(null);
+
+                        JLabel labelY = new JLabel("You and Dr. Strange will now attempt time travel to undo the damage Thanos's snap had done!");
+                        labelY.setBounds(10, 10, 600, 20);
+                        panel.add(labelY);
+
+                        JLabel missionLabelY = new JLabel("You have successfully visited past self of Thanos!!");
+                        missionLabelY.setBounds(10, 40, 600, 20);
+                        panel.add(missionLabelY);
+                        
+                        JButton killthanosBtn = new JButton("You Kill Thanos !!");
+                        killthanosBtn.setBounds(10, 70, 160, 30);
+                        panel.add(killthanosBtn);
+                        
+                        JButton gloveBtn = new JButton("Take back the Glove!");
+                        gloveBtn.setBounds(170, 70, 190, 30);
+                        panel.add(gloveBtn);
+                        
+                        killthanosBtn.addActionListener(new ActionListener() {
+                            @Override
+                            public void actionPerformed(ActionEvent e) {
+                            	endgame();
+                            }
+                        });
+                        
+                        gloveBtn.addActionListener(new ActionListener() {
+                            @Override
+                            public void actionPerformed(ActionEvent e) {
+                            	getContentPane().removeAll(); 
+
+                                JPanel panel = new JPanel();
+                                getContentPane().add(panel);
+                                panel.setLayout(null);
+
+                                JLabel labelX = new JLabel("You snatch back the Glove from Thanos to undo the damage & bring everyone back !!! ");
+                                labelX.setBounds(10, 10, 600, 20);
+                                panel.add(labelX);
+                                
+                                JButton snapBtn = new JButton("SNAP!");
+                                snapBtn.setBounds(10, 70, 220, 30);
+                                panel.add(snapBtn);
+                                
+                                snapBtn.addActionListener(new ActionListener() {
+                                    @Override
+                                    public void actionPerformed(ActionEvent e) {
+                                    	endgame();
+                                    }
+                                });
+                                
+                                setVisible(true);
+                            }
+                        });
+                        
+                        setVisible(true);
+                        
+                    }
+                    
+                    
+                });
+                
+                
+
+                
+                
+                setVisible(true);
+            }
+        });
+
+        
+        gatherStones.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                getContentPane().removeAll(); 
+
+                JPanel panel = new JPanel();
+                getContentPane().add(panel);
+                panel.setLayout(null);
+
+                JLabel label = new JLabel("You are on a mission to gather all stones !!");
+                label.setBounds(10, 10, 600, 20);
+                panel.add(label);
+
+                JLabel missionLabel = new JLabel("Get help from all the avengers to gather all stones!!");
+                missionLabel.setBounds(10, 40, 600, 20);
+                panel.add(missionLabel);
+
+                
+
+                
+                JButton callstrangeBtn = new JButton("Collect Stones!");
+                callstrangeBtn.setBounds(10, 80, 180, 30);
+                panel.add(callstrangeBtn);
+
+
+                
+                callstrangeBtn.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                    	getContentPane().removeAll(); 
+
+	                        JPanel panel = new JPanel();
+	                        getContentPane().add(panel);
+	                        panel.setLayout(null);
+	
+	 
+	
+	
+	                        JLabel labelX = new JLabel("You have collected all the stones and now Infinity Glove is in your hand !!! ");
+	                        labelX.setBounds(10, 10, 600, 20);
+	                        panel.add(labelX);
+	                        
+
+	                    	
+	                        JLabel labely = new JLabel("Snap to kill THANOS!!! ");
+	                        labely.setBounds(10, 40, 600, 20);
+	                        panel.add(labely);
+	                        
+	                        JButton snapBtn = new JButton("SNAP!");
+	                        snapBtn.setBounds(10, 70, 220, 30);
+	                        panel.add(snapBtn);
+	                            
+	                        snapBtn.addActionListener(new ActionListener() {
+	                            @Override
+	                            public void actionPerformed(ActionEvent e) {
+	                            	endgame();
+	                            }
+	                        });
+                            
+                            setVisible(true);
+                        }
+                    });
+                        
+                        setVisible(true);
+                        
+   
+                
+                
+
+                
+                
+                setVisible(true);
+            }
+        });
+
 
 
         setVisible(true);
 
     	
     }
+
     
     
     
