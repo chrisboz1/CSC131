@@ -2,6 +2,8 @@ public class CrystalStoryline
 {
 	public static void main(String[] args) 
 	{
+		String folderPath = "crystal_storyline/";
+		
 		//Intro Scenes and Branches
 		Scene intro1 = new Scene();
 		Scene intro2 = new Scene();
@@ -27,9 +29,9 @@ public class CrystalStoryline
 		Scene intro3Scenes[] = {pickOrb, pickSpear};
 		
 		//Intro Frames
-		intro1.createSceneFrame("crystal_storyline\\intro1.png", intro1Desc, intro1Choices, intro1Scenes);
-		intro2.createSceneFrame("crystal_storyline\\intro2.png", intro2Desc, intro2Choices, intro2Scenes);
-		intro3.createSceneFrame("crystal_storyline\\intro3.png", intro3Desc, intro3Choices, intro3Scenes);
+		intro1.createSceneFrame(folderPath + "intro1.png", intro1Desc, intro1Choices, intro1Scenes);
+		intro2.createSceneFrame(folderPath + "intro2.png", intro2Desc, intro2Choices, intro2Scenes);
+		intro3.createSceneFrame(folderPath + "intro3.png", intro3Desc, intro3Choices, intro3Scenes);
 		
 		/***********************************************************************************************************/
 		//Orb Sequence and Branches
@@ -58,9 +60,9 @@ public class CrystalStoryline
 		Scene spottingScenes[] = {flee, confront};
 		
 		//Orb Route Frames
-		pickOrb.createSceneFrame("crystal_storyline\\pickOrb.png", orbDesc, orbChoices, orbScenes);
-		screech.createSceneFrame("crystal_storyline\\screech.png", screechDesc, screechChoices, screechScenes);
-		spotting.createSceneFrame("crystal_storyline\\spotting.png", spottingDesc, spottingChoices, spottingScenes);
+		pickOrb.createSceneFrame(folderPath + "pickOrb.png", orbDesc, orbChoices, orbScenes);
+		screech.createSceneFrame(folderPath + "screech.png", screechDesc, screechChoices, screechScenes);
+		spotting.createSceneFrame(folderPath + "spotting.png", spottingDesc, spottingChoices, spottingScenes);
 
 		/***********************************************************************************************************/
 		//Spear Sequence and Branches
@@ -90,9 +92,9 @@ public class CrystalStoryline
 		Scene artScenes[] = {stab, sneak};
 		
 		//Spear Route Frames
-		pickSpear.createSceneFrame("crystal_storyline\\pickSpear.png", spearDesc, spearChoices, spearScenes);
-		stalking.createSceneFrame("crystal_storyline\\stalking.png", stalkingDesc, stalkingChoices, stalkingScenes);
-		art.createSceneFrame("crystal_storyline\\art.png", artDesc, artChoices, artScenes);
+		pickSpear.createSceneFrame(folderPath + "pickSpear.png", spearDesc, spearChoices, spearScenes);
+		stalking.createSceneFrame(folderPath + "stalking.png", stalkingDesc, stalkingChoices, stalkingScenes);
+		art.createSceneFrame(folderPath + "art.png", artDesc, artChoices, artScenes);
 		
 		/***********************************************************************************************************/
 		//Flee Sequence and Branches
@@ -134,16 +136,16 @@ public class CrystalStoryline
 
 		String fleeBadDesc = "The wound in your leg makes you a split second slower. Next thing you know, you have reached your end.";
 		//Flee Route Frames
-		flee.createSceneFrame("crystal_storyline\\flee.png", fleeDesc, fleeChoices, fleeScenes);
+		flee.createSceneFrame(folderPath + "flee.png", fleeDesc, fleeChoices, fleeScenes);
 		
 		//Hidden
-		fleeHidden.createSceneFrame("crystal_storyline\\fleeHidden.png", fleeHiddenDesc, fleeHiddenChoices, fleeHiddenScenes);
+		fleeHidden.createSceneFrame(folderPath + "fleeHidden.png", fleeHiddenDesc, fleeHiddenChoices, fleeHiddenScenes);
 		
 		//Caught
-		fleeCaught.createSceneFrame("crystal_storyline\\fleeCaught.png", fleeCaughtDesc, fleeCaughtChoices, fleeCaughtScenes);
-		withThem.createSceneFrame("crystal_storyline\\withThem.png", withThemDesc, withThemChoices, withThemScenes);
-		fleeBetrayal.createSceneFrame("crystal_storyline\\fleeBetrayal.png", fleeBetrayalDesc, fleeBetrayalChoices, fleeBetrayalScenes);
-		fleeBad.createSceneFrame("crystal_storyline\\fleeBad.png", fleeBadDesc);
+		fleeCaught.createSceneFrame(folderPath + "fleeCaught.png", fleeCaughtDesc, fleeCaughtChoices, fleeCaughtScenes);
+		withThem.createSceneFrame(folderPath + "withThem.png", withThemDesc, withThemChoices, withThemScenes);
+		fleeBetrayal.createSceneFrame(folderPath + "fleeBetrayal.png", fleeBetrayalDesc, fleeBetrayalChoices, fleeBetrayalScenes);
+		fleeBad.createSceneFrame(folderPath + "fleeBad.png", fleeBadDesc);
 		
 		/***********************************************************************************************************/
 		
