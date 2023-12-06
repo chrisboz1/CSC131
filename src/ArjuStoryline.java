@@ -8,7 +8,7 @@ public class ArjuStoryline extends JFrame {
     public ArjuStoryline() {
         super("Your Marvel Universe");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(800, 400);
+        setSize(800, 450);
         setLocationRelativeTo(null);
 
 
@@ -19,15 +19,27 @@ public class ArjuStoryline extends JFrame {
 
 
     private void startAdventure() {
+    	JLayeredPane layeredPane = new JLayeredPane();
+        getContentPane().add(layeredPane);
+
+        ImageIcon backgroundImage = new ImageIcon(getClass().getResource("/resources/arju_storyline/MCU.jpeg"));
 
 
-        JPanel panel = new JPanel();
-        getContentPane().add(panel);
-        panel.setLayout(null);
+        JLabel backgroundLabel = new JLabel(backgroundImage);
+        backgroundLabel.setBounds(0, 0, backgroundImage.getIconWidth(), backgroundImage.getIconHeight());
+
+     
+        JPanel panel = new JPanel(null);
+        panel.setOpaque(false); 
+        panel.setBounds(0, 0, getWidth(), getHeight());
+        
+        layeredPane.add(backgroundLabel, JLayeredPane.DEFAULT_LAYER);
+        layeredPane.add(panel, JLayeredPane.PALETTE_LAYER);
 
         JLabel label = new JLabel("You end up in MCU universe. Choose who you wanna ride with?");
         label.setBounds(10, 10, 600, 20);
         panel.add(label);
+
 
         JButton ironManBtn = new JButton("Iron Man");
         ironManBtn.setBounds(10, 40, 100, 30);
@@ -71,10 +83,24 @@ public class ArjuStoryline extends JFrame {
 
         getContentPane().removeAll(); 
 
-        JPanel panel = new JPanel();
-        getContentPane().add(panel);
-        panel.setLayout(null);
+    	JLayeredPane layeredPane = new JLayeredPane();
+        getContentPane().add(layeredPane);
 
+        ImageIcon backgroundImage = new ImageIcon(getClass().getResource("/resources/arju_storyline/ironman.jpeg"));
+
+
+        JLabel backgroundLabel = new JLabel(backgroundImage);
+        backgroundLabel.setBounds(0, 0, backgroundImage.getIconWidth(), backgroundImage.getIconHeight());
+
+     
+        JPanel panel = new JPanel(null);
+        panel.setOpaque(false); 
+        panel.setBounds(0, 0, getWidth(), getHeight());
+        
+        layeredPane.add(backgroundLabel, JLayeredPane.DEFAULT_LAYER);
+        layeredPane.add(panel, JLayeredPane.PALETTE_LAYER);
+        
+        
         JLabel label = new JLabel("Congrats! Now you and Iron Man are on a mission.");
         label.setBounds(10, 10, 380, 20);
         panel.add(label);
@@ -96,9 +122,22 @@ public class ArjuStoryline extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 getContentPane().removeAll();  
 
-                JPanel panel = new JPanel();
-                getContentPane().add(panel);
-                panel.setLayout(null);
+            	JLayeredPane layeredPane = new JLayeredPane();
+                getContentPane().add(layeredPane);
+
+                ImageIcon backgroundImage = new ImageIcon(getClass().getResource("/resources/arju_storyline/warmachine.jpeg"));
+
+
+                JLabel backgroundLabel = new JLabel(backgroundImage);
+                backgroundLabel.setBounds(0, 0, backgroundImage.getIconWidth(), backgroundImage.getIconHeight());
+
+             
+                JPanel panel = new JPanel(null);
+                panel.setOpaque(false); 
+                panel.setBounds(0, 0, getWidth(), getHeight());
+                
+                layeredPane.add(backgroundLabel, JLayeredPane.DEFAULT_LAYER);
+                layeredPane.add(panel, JLayeredPane.PALETTE_LAYER);
 
                 JLabel label = new JLabel("You trained really hard to have the skills of Iron Man.");
                 label.setBounds(10, 10, 380, 20);
@@ -123,9 +162,22 @@ public class ArjuStoryline extends JFrame {
                     public void actionPerformed(ActionEvent e) {
                         getContentPane().removeAll();  
 
-                        JPanel panel = new JPanel();
-                        getContentPane().add(panel);
-                        panel.setLayout(null);
+                    	JLayeredPane layeredPane = new JLayeredPane();
+                        getContentPane().add(layeredPane);
+
+                        ImageIcon backgroundImage = new ImageIcon(getClass().getResource("/resources/arju_storyline/assemble.jpeg"));
+
+
+                        JLabel backgroundLabel = new JLabel(backgroundImage);
+                        backgroundLabel.setBounds(0, 0, backgroundImage.getIconWidth(), backgroundImage.getIconHeight());
+
+                     
+                        JPanel panel = new JPanel(null);
+                        panel.setOpaque(false); 
+                        panel.setBounds(0, 0, getWidth(), getHeight());
+                        
+                        layeredPane.add(backgroundLabel, JLayeredPane.DEFAULT_LAYER);
+                        layeredPane.add(panel, JLayeredPane.PALETTE_LAYER);
 
                         JLabel label = new JLabel("With Iron Man, you have won the fight!");
                         label.setBounds(10, 10, 380, 20);
@@ -165,10 +217,23 @@ public class ArjuStoryline extends JFrame {
                     @Override
                     public void actionPerformed(ActionEvent e) {
                         getContentPane().removeAll(); 
+                        
+                    	JLayeredPane layeredPane = new JLayeredPane();
+                        getContentPane().add(layeredPane);
 
-                        JPanel panel = new JPanel();
-                        getContentPane().add(panel);
-                        panel.setLayout(null);
+                        ImageIcon backgroundImage = new ImageIcon(getClass().getResource("/resources/arju_storyline/assemble.jpeg"));
+
+
+                        JLabel backgroundLabel = new JLabel(backgroundImage);
+                        backgroundLabel.setBounds(0, 0, backgroundImage.getIconWidth(), backgroundImage.getIconHeight());
+
+                     
+                        JPanel panel = new JPanel(null);
+                        panel.setOpaque(false); 
+                        panel.setBounds(0, 0, getWidth(), getHeight());
+                        
+                        layeredPane.add(backgroundLabel, JLayeredPane.DEFAULT_LAYER);
+                        layeredPane.add(panel, JLayeredPane.PALETTE_LAYER);
 
                         JLabel label = new JLabel("You gained the experience of the war and know the threat is not gone forever.");
                         label.setBounds(10, 10, 580, 20);
@@ -208,9 +273,22 @@ public class ArjuStoryline extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 getContentPane().removeAll();  
 
-                JPanel panel = new JPanel();
-                getContentPane().add(panel);
-                panel.setLayout(null);
+            	JLayeredPane layeredPane = new JLayeredPane();
+                getContentPane().add(layeredPane);
+
+                ImageIcon backgroundImage = new ImageIcon(getClass().getResource("/resources/arju_storyline/jarvis.jpeg"));
+
+
+                JLabel backgroundLabel = new JLabel(backgroundImage);
+                backgroundLabel.setBounds(0, 0, backgroundImage.getIconWidth(), backgroundImage.getIconHeight());
+
+             
+                JPanel panel = new JPanel(null);
+                panel.setOpaque(false); 
+                panel.setBounds(0, 0, getWidth(), getHeight());
+                
+                layeredPane.add(backgroundLabel, JLayeredPane.DEFAULT_LAYER);
+                layeredPane.add(panel, JLayeredPane.PALETTE_LAYER);
 
                 JLabel label = new JLabel("You have now replaced Jarvis for Iron Man. An alien attack has raised.");
                 label.setBounds(10, 10, 580, 20);
@@ -235,9 +313,22 @@ public class ArjuStoryline extends JFrame {
                     public void actionPerformed(ActionEvent e) {
                         getContentPane().removeAll(); 
 
-                        JPanel panel = new JPanel();
-                        getContentPane().add(panel);
-                        panel.setLayout(null);
+                    	JLayeredPane layeredPane = new JLayeredPane();
+                        getContentPane().add(layeredPane);
+
+                        ImageIcon backgroundImage = new ImageIcon(getClass().getResource("/resources/arju_storyline/assemble.jpeg"));
+
+
+                        JLabel backgroundLabel = new JLabel(backgroundImage);
+                        backgroundLabel.setBounds(0, 0, backgroundImage.getIconWidth(), backgroundImage.getIconHeight());
+
+                     
+                        JPanel panel = new JPanel(null);
+                        panel.setOpaque(false); 
+                        panel.setBounds(0, 0, getWidth(), getHeight());
+                        
+                        layeredPane.add(backgroundLabel, JLayeredPane.DEFAULT_LAYER);
+                        layeredPane.add(panel, JLayeredPane.PALETTE_LAYER);
 
                         JLabel label = new JLabel("You used your intelligence to assist Iron Man in defeating the aliens.");
                         label.setBounds(10, 10, 580, 20);
@@ -269,9 +360,22 @@ public class ArjuStoryline extends JFrame {
                     public void actionPerformed(ActionEvent e) {
                         getContentPane().removeAll();  
 
-                        JPanel panel = new JPanel();
-                        getContentPane().add(panel);
-                        panel.setLayout(null);
+                    	JLayeredPane layeredPane = new JLayeredPane();
+                        getContentPane().add(layeredPane);
+
+                        ImageIcon backgroundImage = new ImageIcon(getClass().getResource("/resources/arju_storyline/assemble.jpeg"));
+
+
+                        JLabel backgroundLabel = new JLabel(backgroundImage);
+                        backgroundLabel.setBounds(0, 0, backgroundImage.getIconWidth(), backgroundImage.getIconHeight());
+
+                     
+                        JPanel panel = new JPanel(null);
+                        panel.setOpaque(false); 
+                        panel.setBounds(0, 0, getWidth(), getHeight());
+                        
+                        layeredPane.add(backgroundLabel, JLayeredPane.DEFAULT_LAYER);
+                        layeredPane.add(panel, JLayeredPane.PALETTE_LAYER);
 
                         JLabel label = new JLabel("You asked SHIELDS to help and defeated the Aliens.");
                         label.setBounds(10, 10, 580, 20);
@@ -310,9 +414,22 @@ public class ArjuStoryline extends JFrame {
     private void thorMission() {
     	 getContentPane().removeAll();  
 
-         JPanel panel = new JPanel();
-         getContentPane().add(panel);
-         panel.setLayout(null);
+     	JLayeredPane layeredPane = new JLayeredPane();
+        getContentPane().add(layeredPane);
+
+        ImageIcon backgroundImage = new ImageIcon(getClass().getResource("/resources/arju_storyline/thor.jpeg"));
+
+
+        JLabel backgroundLabel = new JLabel(backgroundImage);
+        backgroundLabel.setBounds(0, 0, backgroundImage.getIconWidth(), backgroundImage.getIconHeight());
+
+     
+        JPanel panel = new JPanel(null);
+        panel.setOpaque(false); 
+        panel.setBounds(0, 0, getWidth(), getHeight());
+        
+        layeredPane.add(backgroundLabel, JLayeredPane.DEFAULT_LAYER);
+        layeredPane.add(panel, JLayeredPane.PALETTE_LAYER);
 
          JLabel label = new JLabel("Asgard has been under attack. Loki is missing. You have to help Thor during this hard time.");
          label.setBounds(10, 10, 580, 20);
@@ -327,7 +444,7 @@ public class ArjuStoryline extends JFrame {
          panel.add(fightWithThorBtn);
 
          JButton findLokiBtn = new JButton("Find Loki");
-         findLokiBtn.setBounds(320, 70, 250, 30);
+         findLokiBtn.setBounds(320, 70, 170, 30);
          panel.add(findLokiBtn);
 
          fightWithThorBtn.addActionListener(new ActionListener() {
@@ -335,9 +452,22 @@ public class ArjuStoryline extends JFrame {
              public void actionPerformed(ActionEvent e) {
                  getContentPane().removeAll(); 
 
-                 JPanel panel = new JPanel();
-                 getContentPane().add(panel);
-                 panel.setLayout(null);
+             	JLayeredPane layeredPane = new JLayeredPane();
+                getContentPane().add(layeredPane);
+
+                ImageIcon backgroundImage = new ImageIcon(getClass().getResource("/resources/arju_storyline/assemble.jpeg"));
+
+
+                JLabel backgroundLabel = new JLabel(backgroundImage);
+                backgroundLabel.setBounds(0, 0, backgroundImage.getIconWidth(), backgroundImage.getIconHeight());
+
+             
+                JPanel panel = new JPanel(null);
+                panel.setOpaque(false); 
+                panel.setBounds(0, 0, getWidth(), getHeight());
+                
+                layeredPane.add(backgroundLabel, JLayeredPane.DEFAULT_LAYER);
+                layeredPane.add(panel, JLayeredPane.PALETTE_LAYER);
 
                  JLabel label = new JLabel("You fought alongside Thor to save Asgard from the attackers.");
                  label.setBounds(10, 10, 580, 20);
@@ -367,9 +497,22 @@ public class ArjuStoryline extends JFrame {
              public void actionPerformed(ActionEvent e) {
                  getContentPane().removeAll(); 
 
-                 JPanel panel = new JPanel();
-                 getContentPane().add(panel);
-                 panel.setLayout(null);
+             	JLayeredPane layeredPane = new JLayeredPane();
+                getContentPane().add(layeredPane);
+
+                ImageIcon backgroundImage = new ImageIcon(getClass().getResource("/resources/arju_storyline/assemble.jpeg"));
+
+
+                JLabel backgroundLabel = new JLabel(backgroundImage);
+                backgroundLabel.setBounds(0, 0, backgroundImage.getIconWidth(), backgroundImage.getIconHeight());
+
+             
+                JPanel panel = new JPanel(null);
+                panel.setOpaque(false); 
+                panel.setBounds(0, 0, getWidth(), getHeight());
+                
+                layeredPane.add(backgroundLabel, JLayeredPane.DEFAULT_LAYER);
+                layeredPane.add(panel, JLayeredPane.PALETTE_LAYER);
 
                  JLabel label = new JLabel("You went on a mission to find Loki and bring him back to Asgard.");
                  label.setBounds(10, 10, 600, 20);
@@ -404,9 +547,22 @@ public class ArjuStoryline extends JFrame {
     	
     	getContentPane().removeAll();  
 
-        JPanel panel = new JPanel();
-        getContentPane().add(panel);
-        panel.setLayout(null);
+    	JLayeredPane layeredPane = new JLayeredPane();
+        getContentPane().add(layeredPane);
+
+        ImageIcon backgroundImage = new ImageIcon(getClass().getResource("/resources/arju_storyline/capusa.jpeg"));
+
+
+        JLabel backgroundLabel = new JLabel(backgroundImage);
+        backgroundLabel.setBounds(0, 0, backgroundImage.getIconWidth(), backgroundImage.getIconHeight());
+
+     
+        JPanel panel = new JPanel(null);
+        panel.setOpaque(false); 
+        panel.setBounds(0, 0, getWidth(), getHeight());
+        
+        layeredPane.add(backgroundLabel, JLayeredPane.DEFAULT_LAYER);
+        layeredPane.add(panel, JLayeredPane.PALETTE_LAYER);
 
         JLabel label = new JLabel("As being Mr. USA, Steve Rogers faces the difficulty.");
         label.setBounds(10, 10, 600, 20);
@@ -436,9 +592,22 @@ public class ArjuStoryline extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 getContentPane().removeAll(); 
 
-                JPanel panel = new JPanel();
-                getContentPane().add(panel);
-                panel.setLayout(null);
+            	JLayeredPane layeredPane = new JLayeredPane();
+                getContentPane().add(layeredPane);
+
+                ImageIcon backgroundImage = new ImageIcon(getClass().getResource("/resources/arju_storyline/assemble.jpeg"));
+
+
+                JLabel backgroundLabel = new JLabel(backgroundImage);
+                backgroundLabel.setBounds(0, 0, backgroundImage.getIconWidth(), backgroundImage.getIconHeight());
+
+             
+                JPanel panel = new JPanel(null);
+                panel.setOpaque(false); 
+                panel.setBounds(0, 0, getWidth(), getHeight());
+                
+                layeredPane.add(backgroundLabel, JLayeredPane.DEFAULT_LAYER);
+                layeredPane.add(panel, JLayeredPane.PALETTE_LAYER);
 
                 JLabel label = new JLabel("You teamed with The Cap to make sure HYDRA doesn't return to end the world.");
                 label.setBounds(10, 10, 600, 20);
@@ -468,9 +637,22 @@ public class ArjuStoryline extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 getContentPane().removeAll(); 
 
-                JPanel panel = new JPanel();
-                getContentPane().add(panel);
-                panel.setLayout(null);
+            	JLayeredPane layeredPane = new JLayeredPane();
+                getContentPane().add(layeredPane);
+
+                ImageIcon backgroundImage = new ImageIcon(getClass().getResource("/resources/arju_storyline/assemble.jpeg"));
+
+
+                JLabel backgroundLabel = new JLabel(backgroundImage);
+                backgroundLabel.setBounds(0, 0, backgroundImage.getIconWidth(), backgroundImage.getIconHeight());
+
+             
+                JPanel panel = new JPanel(null);
+                panel.setOpaque(false); 
+                panel.setBounds(0, 0, getWidth(), getHeight());
+                
+                layeredPane.add(backgroundLabel, JLayeredPane.DEFAULT_LAYER);
+                layeredPane.add(panel, JLayeredPane.PALETTE_LAYER);
 
                 JLabel label = new JLabel("You teamed with The Cap to make sure Bucky is defeated.");
                 label.setBounds(10, 10, 600, 20);
@@ -507,9 +689,22 @@ public class ArjuStoryline extends JFrame {
     private void endgame() {
     	getContentPane().removeAll();
 
-        JPanel panel = new JPanel();
-        getContentPane().add(panel);
-        panel.setLayout(null);
+    	JLayeredPane layeredPane = new JLayeredPane();
+        getContentPane().add(layeredPane);
+
+        ImageIcon backgroundImage = new ImageIcon(getClass().getResource("/resources/arju_storyline/endgame.jpeg"));
+
+
+        JLabel backgroundLabel = new JLabel(backgroundImage);
+        backgroundLabel.setBounds(0, 0, backgroundImage.getIconWidth(), backgroundImage.getIconHeight());
+
+     
+        JPanel panel = new JPanel(null);
+        panel.setOpaque(false); 
+        panel.setBounds(0, 0, getWidth(), getHeight());
+        
+        layeredPane.add(backgroundLabel, JLayeredPane.DEFAULT_LAYER);
+        layeredPane.add(panel, JLayeredPane.PALETTE_LAYER);
 
         JLabel label = new JLabel("YOU HAVE DEFEATED THANOS AND BROUGHT BACK HUMANITY!");
         label.setBounds(10, 10, 600, 20);
@@ -519,8 +714,8 @@ public class ArjuStoryline extends JFrame {
         label1.setBounds(10, 30, 600, 20);
         panel.add(label1);
         
-        JLabel label2 = new JLabel("CONGRATULATIONS !! YOU HAVE SUCCESSFULLY COMPLETED THE MISSION");
-        label2.setBounds(10, 60, 600, 20);
+        JLabel label2 = new JLabel("CONGRATULATIONS !! MISSION SUCCESSFUL !!");
+        label2.setBounds(10, 80, 600, 20);
         panel.add(label2);
         
         setVisible(true);
@@ -530,9 +725,22 @@ public class ArjuStoryline extends JFrame {
     private void assembleAvengers() {
     	getContentPane().removeAll();
 
-        JPanel panel = new JPanel();
-        getContentPane().add(panel);
-        panel.setLayout(null);
+    	JLayeredPane layeredPane = new JLayeredPane();
+        getContentPane().add(layeredPane);
+
+        ImageIcon backgroundImage = new ImageIcon(getClass().getResource("/resources/arju_storyline/thanos.jpeg"));
+
+
+        JLabel backgroundLabel = new JLabel(backgroundImage);
+        backgroundLabel.setBounds(0, 0, backgroundImage.getIconWidth(), backgroundImage.getIconHeight());
+
+     
+        JPanel panel = new JPanel(null);
+        panel.setOpaque(false); 
+        panel.setBounds(0, 0, getWidth(), getHeight());
+        
+        layeredPane.add(backgroundLabel, JLayeredPane.DEFAULT_LAYER);
+        layeredPane.add(panel, JLayeredPane.PALETTE_LAYER);
 
         JLabel label = new JLabel("Avengers have been assembled!");
         label.setBounds(10, 10, 600, 20);
@@ -556,9 +764,22 @@ public class ArjuStoryline extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 getContentPane().removeAll(); 
 
-                JPanel panel = new JPanel();
-                getContentPane().add(panel);
-                panel.setLayout(null);
+            	JLayeredPane layeredPane = new JLayeredPane();
+                getContentPane().add(layeredPane);
+
+                ImageIcon backgroundImage = new ImageIcon(getClass().getResource("/resources/arju_storyline/thanosnap.jpeg"));
+
+
+                JLabel backgroundLabel = new JLabel(backgroundImage);
+                backgroundLabel.setBounds(0, 0, backgroundImage.getIconWidth(), backgroundImage.getIconHeight());
+
+             
+                JPanel panel = new JPanel(null);
+                panel.setOpaque(false); 
+                panel.setBounds(0, 0, getWidth(), getHeight());
+                
+                layeredPane.add(backgroundLabel, JLayeredPane.DEFAULT_LAYER);
+                layeredPane.add(panel, JLayeredPane.PALETTE_LAYER);
 
                 JLabel label = new JLabel("You have successfully gathered SpiderMan, Black Panter, Hulk and Ms Marvel!!");
                 label.setBounds(10, 10, 600, 20);
@@ -596,11 +817,24 @@ public class ArjuStoryline extends JFrame {
                     public void actionPerformed(ActionEvent e) {
                     	getContentPane().removeAll(); 
 
-                        JPanel panel = new JPanel();
-                        getContentPane().add(panel);
-                        panel.setLayout(null);
+                    	JLayeredPane layeredPane = new JLayeredPane();
+                        getContentPane().add(layeredPane);
 
-                        JLabel labelY = new JLabel("You and Dr. Strange will now attempt time travel to undo the damage Thanos's snap had done!");
+                        ImageIcon backgroundImage = new ImageIcon(getClass().getResource("/resources/arju_storyline/strange.jpeg"));
+
+
+                        JLabel backgroundLabel = new JLabel(backgroundImage);
+                        backgroundLabel.setBounds(0, 0, backgroundImage.getIconWidth(), backgroundImage.getIconHeight());
+
+                     
+                        JPanel panel = new JPanel(null);
+                        panel.setOpaque(false); 
+                        panel.setBounds(0, 0, getWidth(), getHeight());
+                        
+                        layeredPane.add(backgroundLabel, JLayeredPane.DEFAULT_LAYER);
+                        layeredPane.add(panel, JLayeredPane.PALETTE_LAYER);
+
+                        JLabel labelY = new JLabel("You and Dr. Strange will now attempt time travel to undo Thanos's snap!");
                         labelY.setBounds(10, 10, 600, 20);
                         panel.add(labelY);
 
@@ -628,9 +862,22 @@ public class ArjuStoryline extends JFrame {
                             public void actionPerformed(ActionEvent e) {
                             	getContentPane().removeAll(); 
 
-                                JPanel panel = new JPanel();
-                                getContentPane().add(panel);
-                                panel.setLayout(null);
+                            	JLayeredPane layeredPane = new JLayeredPane();
+                                getContentPane().add(layeredPane);
+
+                                ImageIcon backgroundImage = new ImageIcon(getClass().getResource("/resources/arju_storyline/snap.jpeg"));
+
+
+                                JLabel backgroundLabel = new JLabel(backgroundImage);
+                                backgroundLabel.setBounds(0, 0, backgroundImage.getIconWidth(), backgroundImage.getIconHeight());
+
+                             
+                                JPanel panel = new JPanel(null);
+                                panel.setOpaque(false); 
+                                panel.setBounds(0, 0, getWidth(), getHeight());
+                                
+                                layeredPane.add(backgroundLabel, JLayeredPane.DEFAULT_LAYER);
+                                layeredPane.add(panel, JLayeredPane.PALETTE_LAYER);
 
                                 JLabel labelX = new JLabel("You snatch back the Glove from Thanos to undo the damage & bring everyone back !!! ");
                                 labelX.setBounds(10, 10, 600, 20);
@@ -672,9 +919,22 @@ public class ArjuStoryline extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 getContentPane().removeAll(); 
 
-                JPanel panel = new JPanel();
-                getContentPane().add(panel);
-                panel.setLayout(null);
+            	JLayeredPane layeredPane = new JLayeredPane();
+                getContentPane().add(layeredPane);
+
+                ImageIcon backgroundImage = new ImageIcon(getClass().getResource("/resources/arju_storyline/stones.jpeg"));
+
+
+                JLabel backgroundLabel = new JLabel(backgroundImage);
+                backgroundLabel.setBounds(0, 0, backgroundImage.getIconWidth(), backgroundImage.getIconHeight());
+
+             
+                JPanel panel = new JPanel(null);
+                panel.setOpaque(false); 
+                panel.setBounds(0, 0, getWidth(), getHeight());
+                
+                layeredPane.add(backgroundLabel, JLayeredPane.DEFAULT_LAYER);
+                layeredPane.add(panel, JLayeredPane.PALETTE_LAYER);
 
                 JLabel label = new JLabel("You are on a mission to gather all stones !!");
                 label.setBounds(10, 10, 600, 20);
@@ -698,9 +958,22 @@ public class ArjuStoryline extends JFrame {
                     public void actionPerformed(ActionEvent e) {
                     	getContentPane().removeAll(); 
 
-	                        JPanel panel = new JPanel();
-	                        getContentPane().add(panel);
-	                        panel.setLayout(null);
+                    	JLayeredPane layeredPane = new JLayeredPane();
+                        getContentPane().add(layeredPane);
+
+                        ImageIcon backgroundImage = new ImageIcon(getClass().getResource("/resources/arju_storyline/snap.jpeg"));
+
+
+                        JLabel backgroundLabel = new JLabel(backgroundImage);
+                        backgroundLabel.setBounds(0, 0, backgroundImage.getIconWidth(), backgroundImage.getIconHeight());
+
+                     
+                        JPanel panel = new JPanel(null);
+                        panel.setOpaque(false); 
+                        panel.setBounds(0, 0, getWidth(), getHeight());
+                        
+                        layeredPane.add(backgroundLabel, JLayeredPane.DEFAULT_LAYER);
+                        layeredPane.add(panel, JLayeredPane.PALETTE_LAYER);
 	
 	 
 	
