@@ -2,10 +2,10 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class ArjuStoryline extends JFrame {
+public class MarvelUniverse extends JFrame {
 
 
-    public ArjuStoryline() {
+    public MarvelUniverse() {
         super("Your Marvel Universe");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(800, 450);

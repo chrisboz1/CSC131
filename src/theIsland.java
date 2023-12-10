@@ -84,4 +84,3 @@ public class theIsland {
         intro1.getFrame().setVisible(true);
     }
 }
-
