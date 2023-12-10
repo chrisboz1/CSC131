@@ -1,8 +1,11 @@
+import java.awt.Color;
+
 public class CrystalStoryline 
 {
 	public static void main(String[] args) 
 	{
 		String folderPath = "crystal_storyline/";
+		Color caveColor = new Color(9, 3, 49);
 		
 		//Intro Scenes and Branches
 		Scene intro1 = new Scene();
@@ -102,23 +105,42 @@ public class CrystalStoryline
 		Scene fleeCaught = new Scene();
 		
 		//Hidden
-		//Scene fall = new Scene();
+		Scene fall1 = new Scene();
+		Scene fall2 = new Scene();
+		Scene undertale = new Scene();
 		
 		//Caught
 		Scene withThem = new Scene();
 		Scene fleeBetrayal = new Scene();
 		Scene fleeBad = new Scene();
+		
 		//Flee Route Choices
 		String fleeDesc = "";
 		String fleeChoices[] = { "...", "!" };
 		Scene fleeScenes[] = {fleeHidden, fleeCaught};
 		flee.addAutoAdvance(5, 1);
 		
+		//Hidden
 		String fleeHiddenDesc = "You evade the enemy patrol, dashing aimlessly through this white desert. Fittingly, like quicksand"
 							  + ", you feel the ground give way.";
 		String fleeHiddenChoices[] = { "Uh oh.", "Brace for impact." };
-		Scene fleeHiddenScenes[] = {fleeHidden};
+		Scene fleeHiddenScenes[] = {fall1};
 		
+		Scene fall1Next[] = {fall2};
+		fall1.setNextScenes(fall1Next);
+		fall1.addAutoAdvance(2, 0);
+		
+		Scene fall2Next[] = {undertale};
+		fall2.setNextScenes(fall2Next);
+		fall2.addAutoAdvance(2, 0);
+		
+		undertale.getFrame().setBackground(caveColor);
+		String undertaleDesc = "You've survived worse. This is a strange cave you found yourself in; it doesn't seem to be a natural"
+							 + " formation. ";
+		String undertaleChoices[] = { "Uh oh.", "Brace for impact." };
+		Scene undertaleScenes[] = {fall1};
+		
+		//Caught
 		String fleeCaughtDesc = "A red arcane blast trips up your feeble attempt to escape. You crash onto the freezing sands.";
 		String fleeCaughtChoices[] = { "That hurt...", "Look over your shoulder." };
 		Scene fleeCaughtScenes[] = {withThem};
@@ -135,17 +157,22 @@ public class CrystalStoryline
 		Scene fleeBetrayalScenes[] = {fleeBad, fleeBad};
 
 		String fleeBadDesc = "The wound in your leg makes you a split second slower. Next thing you know, you have reached your end.";
+		String fleeBadChoices[] = {"Restart?", "Yes."};
+		Scene fleeBadScenes[] = {intro1};
 		//Flee Route Frames
 		flee.createSceneFrame(folderPath + "flee.png", fleeDesc, fleeChoices, fleeScenes);
 		
 		//Hidden
 		fleeHidden.createSceneFrame(folderPath + "fleeHidden.png", fleeHiddenDesc, fleeHiddenChoices, fleeHiddenScenes);
+		fall1.createSceneFrame(folderPath + "fall1.png");
+		fall2.createSceneFrame(folderPath + "fall2.png");
+		undertale.createSceneFrame(folderPath + "undertale.png", undertaleDesc, undertaleChoices, undertaleScenes);
 		
 		//Caught
 		fleeCaught.createSceneFrame(folderPath + "fleeCaught.png", fleeCaughtDesc, fleeCaughtChoices, fleeCaughtScenes);
 		withThem.createSceneFrame(folderPath + "withThem.png", withThemDesc, withThemChoices, withThemScenes);
 		fleeBetrayal.createSceneFrame(folderPath + "fleeBetrayal.png", fleeBetrayalDesc, fleeBetrayalChoices, fleeBetrayalScenes);
-		fleeBad.createSceneFrame(folderPath + "fleeBad.png", fleeBadDesc);
+		fleeBad.createSceneFrame(folderPath + "fleeBad.png", fleeBadDesc, fleeBadChoices, fleeBadScenes);
 		
 		/***********************************************************************************************************/
 		
