@@ -1,3 +1,6 @@
+
+
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -16,8 +19,6 @@ public class MarvelUniverse extends JFrame {
         startAdventure();
     }
     
-
-
     private void startAdventure() {
     	JLayeredPane layeredPane = new JLayeredPane();
         getContentPane().add(layeredPane);
@@ -1004,41 +1005,12 @@ public class MarvelUniverse extends JFrame {
                     });
                         
                         setVisible(true);
-                        
-   
-                
-                
-
-                
-                
                 setVisible(true);
             }
         });
-
-
-
         setVisible(true);
-
-    	
     }
-
-    
-    
-    
-   
-
-   
-   
-   
-  
-    
     
     public static void main(String[] args) {
-        SwingUtilities.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                new ArjuStoryline();
-            }
-        });
     }
 }

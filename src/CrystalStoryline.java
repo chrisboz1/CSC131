@@ -1,3 +1,4 @@
+
 import java.awt.Color;
 
 //Zamiel's Storyline
@@ -63,10 +64,16 @@ public class CrystalStoryline
 		String spottingChoices[] = { "Enemies approach!", "Flee!", "Confront!" };
 		Scene spottingScenes[] = {flee, confront};
 		
+		String confrontDesc = "You are immediately shot by an arcane beam. You reach a pathetic end.";
+		String confrontChoices[] = {"Restart?", "Yes."};
+		Scene confrontScenes[] = {intro1};
+		
 		//Orb Route Frames
 		pickOrb.createSceneFrame(folderPath + "pickOrb.png", orbDesc, orbChoices, orbScenes);
 		screech.createSceneFrame(folderPath + "screech.png", screechDesc, screechChoices, screechScenes);
 		spotting.createSceneFrame(folderPath + "spotting.png", spottingDesc, spottingChoices, spottingScenes);
+		
+		confront.createSceneFrame(folderPath + "confront.png", confrontDesc, confrontChoices, confrontScenes);
 
 		/***********************************************************************************************************/
 		//Spear Sequence and Branches

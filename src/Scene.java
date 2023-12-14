@@ -1,3 +1,4 @@
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -25,6 +26,11 @@ public class Scene
 	{
 		this.frame = frame;
 		this.nextScenes = nextScenes;
+	}
+	
+	public void setFrame(JFrame frame) 
+	{
+		this.frame = frame;
 	}
 	
 	public JFrame getFrame() 
@@ -99,6 +105,7 @@ public class Scene
 	                if (Objects.equals(choiceList.getSelectedItem(), listChoices[i]))
 	                {
 	                    advanceScene(i-1);
+	                    choiceList.select(0);
 	                }
 	            }
             }
